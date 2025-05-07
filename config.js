@@ -1,30 +1,17 @@
 require('dotenv').config();
 
-global.APIs = {
-    xteam: 'https://api.xteam.xyz',
-    dzx: 'https://api.dhamzxploit.my.id',
-    lol: 'https://api.lolhuman.xyz',
-    violetics: 'https://violetics.pw',
-    neoxr: 'https://api.neoxr.my.id',
-    zenzapis: 'https://zenzapis.xyz',
-    akuari: 'https://api.akuari.my.id',
-    akuari2: 'https://apimu.my.id',
-    nrtm: 'https://fg-nrtm.ddns.net',
-    bg: 'http://bochil.ddns.net',
-    fgmods: 'https://api-fgmods.ddns.net'
-};
-
-global.APIKeys = {
-    'https://api.xteam.xyz': 'd90a9e986e18778b',
-    'https://api.lolhuman.xyz': '85faf717d0545d14074659ad',
-    'https://api.neoxr.my.id': 'yourkey',
-    'https://violetics.pw': 'beta',
-    'https://zenzapis.xyz': 'yourkey',
-    'https://api-fgmods.ddns.net': 'fg-dylux'
-};
-
 module.exports = {
-    WARN_COUNT: 3,
-    APIs: global.APIs,
-    APIKeys: global.APIKeys
+  port: process.env.PORT || 3000,
+
+  // Token de vérification utilisé pour valider la webhook avec Meta
+  verifyToken: process.env.VERIFY_TOKEN || 'default_verify_token',
+
+  // Token d'accès à l'API WhatsApp Cloud
+  whatsappToken: process.env.WHATSAPP_TOKEN,
+
+  // ID du numéro WhatsApp (fournit dans le dashboard Meta)
+  phoneNumberId: process.env.PHONE_NUMBER_ID,
+
+  // URL de base de l'API WhatsApp Cloud
+  apiUrl: process.env.API_URL || 'https://graph.facebook.com/v18.0',
 };
